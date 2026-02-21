@@ -10,6 +10,7 @@ function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
+
 window.addEventListener('resize', resize);
 resize();
 
@@ -57,7 +58,7 @@ const observer = new IntersectionObserver(
             }
         });
     },
-    { threshold: 0.15 }
+    {threshold: 0.15}
 );
 
 revealEls.forEach(el => {
@@ -69,17 +70,27 @@ revealEls.forEach(el => {
 
 /* ===== CTA ATTENTION ===== */
 let idleTimer;
+
 function resetIdle() {
     clearTimeout(idleTimer);
     idleTimer = setTimeout(() => {
         const cta = document.querySelector(".cta");
         if (cta) {
-            cta.scrollIntoView({ behavior: "smooth" });
+            cta.scrollIntoView({behavior: "smooth"});
         }
     }, 45000); // 45 сек без дій
 }
 
-["mousemove","scroll","keydown","touchstart"]
+["mousemove", "scroll", "keydown", "touchstart"]
     .forEach(e => window.addEventListener(e, resetIdle));
 
 resetIdle();
+
+window.addEventListener('scroll', () => {
+    const btn = document.querySelector('.tg-sticky');
+    if (window.scrollY > 600) {
+        btn.classList.add('show');
+    } else {
+        btn.classList.remove('show');
+    }
+});
