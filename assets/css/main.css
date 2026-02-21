@@ -228,3 +228,101 @@ footer {
         margin: 0 4%;
     }
 }
+
+/* CTA */
+.cta {
+    padding: 140px 10%;
+    text-align: center;
+}
+
+.cta-inner {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.cta h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.2;
+}
+
+.cta h2 span {
+    color: var(--accent);
+}
+
+.cta-text {
+    margin-top: 25px;
+    font-size: 1.1rem;
+    opacity: .85;
+}
+
+/* CHAT */
+.cta-chat {
+    margin: 50px auto 40px;
+    max-width: 420px;
+    text-align: left;
+}
+
+.msg {
+    padding: 12px 16px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    width: fit-content;
+    max-width: 90%;
+    font-size: .95rem;
+}
+
+.msg.user {
+    background: rgba(255,255,255,.08);
+}
+
+.msg.you {
+    background: rgba(0,255,163,.15);
+    margin-left: auto;
+}
+
+.msg.strong {
+    font-weight: 600;
+}
+
+/* BUTTON */
+.telegram-btn {
+    font-size: 1.1rem;
+    padding: 18px 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.telegram-btn::before {
+    content: "✈";
+}
+
+/* SUBTEXT */
+.cta-sub {
+    display: block;
+    margin-top: 18px;
+    font-size: .85rem;
+    opacity: .6;
+}
+
+/* STICKY TG */
+.tg-sticky {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--accent);
+    color: #000;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transition: .4s;
+    z-index: 999;
+}
+
+.tg-sticky.show {
+    opacity: 1;
+    pointer-events: auto;
+}
